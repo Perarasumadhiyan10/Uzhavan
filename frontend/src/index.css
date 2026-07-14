@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 30% 96%;
+    --foreground: 150 25% 12%;
+
+    --card: 40 25% 99%;
+    --card-foreground: 150 25% 12%;
+
+    --popover: 40 25% 99%;
+    --popover-foreground: 150 25% 12%;
+
+    --primary: 145 40% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 45 25% 90%;
+    --secondary-foreground: 150 25% 15%;
+
+    --muted: 40 15% 92%;
+    --muted-foreground: 150 10% 42%;
+
+    --accent: 80 35% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 18% 86%;
+    --input: 40 18% 86%;
+    --ring: 145 40% 32%;
+
+    --radius: 0.75rem;
+
+    --olive: 80 30% 38%;
+    --olive-foreground: 0 0% 100%;
+    --beige: 38 40% 88%;
+    --beige-foreground: 150 25% 12%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --success: 145 55% 38%;
+    --success-foreground: 0 0% 100%;
+
+    --sidebar-background: 40 25% 98%;
+    --sidebar-foreground: 150 25% 26%;
+    --sidebar-primary: 145 40% 32%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 45 25% 90%;
+    --sidebar-accent-foreground: 150 25% 15%;
+    --sidebar-border: 40 18% 86%;
+    --sidebar-ring: 145 40% 32%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(145, 40%, 32%), hsl(80, 30%, 38%));
+    --gradient-accent: linear-gradient(135deg, hsl(38, 40%, 88%), hsl(45, 35%, 82%));
+    --gradient-avatar: linear-gradient(135deg, hsl(145, 45%, 36%), hsl(80, 35%, 40%));
+    --gradient-hero: linear-gradient(160deg, hsl(40, 30%, 96%), hsl(145, 20%, 92%));
+    --gradient-auth-bg: linear-gradient(135deg, hsl(145, 30%, 18%) 0%, hsl(80, 20%, 22%) 50%, hsl(40, 25%, 28%) 100%);
+    --shadow-card: 0 4px 24px -4px hsl(145 40% 32% / 0.08);
+    --shadow-card-hover: 0 12px 40px -8px hsl(145 40% 32% / 0.16);
+    --shadow-navbar: 0 2px 20px -2px hsl(150 25% 12% / 0.06);
+    --shadow-elevated: 0 20px 60px -12px hsl(145 40% 32% / 0.2);
+  }
+
+  .dark {
+    --background: 150 18% 7%;
+    --foreground: 40 20% 92%;
+
+    --card: 150 15% 11%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 150 15% 11%;
+    --popover-foreground: 40 20% 92%;
+
+    --primary: 145 45% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 150 12% 16%;
+    --secondary-foreground: 40 20% 92%;
+
+    --muted: 150 12% 16%;
+    --muted-foreground: 40 12% 55%;
+
+    --accent: 80 30% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 35%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 12% 18%;
+    --input: 150 12% 18%;
+    --ring: 145 45% 42%;
+
+    --olive: 80 25% 45%;
+    --olive-foreground: 0 0% 100%;
+    --beige: 38 20% 22%;
+    --beige-foreground: 40 20% 92%;
+    --warning: 38 80% 50%;
+    --warning-foreground: 0 0% 100%;
+    --success: 145 50% 42%;
+    --success-foreground: 0 0% 100%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(145, 45%, 42%), hsl(80, 30%, 45%));
+    --gradient-accent: linear-gradient(135deg, hsl(38, 20%, 22%), hsl(45, 15%, 18%));
+    --gradient-avatar: linear-gradient(135deg, hsl(145, 50%, 45%), hsl(80, 30%, 42%));
+    --gradient-hero: linear-gradient(160deg, hsl(150, 18%, 7%), hsl(145, 15%, 12%));
+    --gradient-auth-bg: linear-gradient(135deg, hsl(150, 25%, 5%) 0%, hsl(80, 15%, 8%) 50%, hsl(40, 15%, 10%) 100%);
+    --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.3);
+    --shadow-card-hover: 0 12px 40px -8px hsl(145 45% 42% / 0.2);
+    --shadow-navbar: 0 2px 20px -2px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 20px 60px -12px hsl(0 0% 0% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #a8e063, #56ab2f);
+  }
+
+  .stat-card {
+    @apply bg-card rounded-xl p-6 border border-border;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .stat-card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-4px);
+  }
+
+  .ripple-btn {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ripple-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--ripple-x, 50%) var(--ripple-y, 50%), hsl(0 0% 100% / 0.3), transparent 60%);
+    transform: scale(0);
+    transition: transform 0.5s;
+  }
+
+  .ripple-btn:active::after {
+    transform: scale(2.5);
+    transition: transform 0s;
+  }
+
+  /* Avatar glow pulse ring */
+  .avatar-glow {
+    position: relative;
+  }
+  .avatar-glow::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    filter: blur(6px);
+  }
+  .avatar-glow:hover::after {
+    opacity: 0.5;
+    animation: glow-pulse 1.5s ease-in-out infinite;
+  }
+
+  /* Nav active indicator slide */
+  .nav-link-active {
+    position: relative;
+  }
+  .nav-link-active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    border-radius: 99px;
+    animation: slide-in 0.25s ease;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.08); }
+}
+
+@keyframes slide-in {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes letter-pop {
+  0% { opacity: 0; transform: translateY(12px) scale(0.8); }
+  60% { transform: translateY(-3px) scale(1.05); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes underline-sweep {
+  from { transform: scaleX(0); transform-origin: left; }
+  to { transform: scaleX(1); transform-origin: left; }
+}
+
+.logo-float {
+  display: inline-block;
+}

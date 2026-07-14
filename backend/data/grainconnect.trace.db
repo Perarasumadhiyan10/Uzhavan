@@ -1,0 +1,3 @@
+2026-07-10 10:21:42.725533+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE CHARACTER VARYING(1000)": "'data:image/jpeg;base64,/9j/4QCWRXhpZgAASUkqAAgAAAAGABIBAwABAAAAAQAAABoBBQABAAAA... (2108575)"; SQL statement:
+insert into grains (available_kg,farmer,farmer_id,farmer_phone,image,lat,lng,location,name,posted_at,price_per_kg,reserved_kg,type,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,default) [22001-224]
